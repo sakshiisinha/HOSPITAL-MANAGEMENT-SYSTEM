@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Management System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Management System</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #aeffe3, #43c6ac);
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        .welcome-container {
+            max-width: 540px;
+            margin: 60px auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 6px 28px rgba(67,198,172,0.15);
+            padding: 40px 32px;
+            text-align: center;
+        }
+        .logo {
+            width: 90px;
+            margin-bottom: 18px;
+            border-radius: 12px;
+        }
+        h1 {
+            color: #43c6ac;
+            margin-bottom: 10px;
+        }
+        .hospital-details {
+            color: #090556;
+            margin-bottom: 24px;
+            font-size: 1.08em;
+            line-height: 1.5;
+        }
+        .features {
+            color: #2193b0;
+            margin-bottom: 30px;
+            font-size: 1em;
+            text-align: left;
+            padding-left: 18%;
+        }
+        .btn {
+            background: #43c6ac;
+            color: #fff;
+            padding: 12px 36px;
+            font-size: 1em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 0 8px;
+            transition: background 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn:hover {
+            background: #2e858b;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <img class="logo" src="https://cdn-icons-png.flaticon.com/512/2961/2961375.png" alt="Hospital Logo"/>
+        <h1>Welcome to Hospital</h1>
+        <div class="hospital-details">
+            Our Hospital is dedicated to providing compassionate healthcare with advanced medical technology, experienced professionals, and a patient-first approach.<br>
+            Established in 2005, we offer comprehensive medical services including emergency care, surgery, diagnostics, and specialized treatments.<br>
+            Our commitment is to your health and well-being.
+        </div>
+        <div class="features">
+            <strong>Key Features of Our Management System:</strong>
+            <ul>
+                <li>Patient Registration & Record Management</li>
+                <li>Doctor & Staff Scheduling</li>
+                <li>Appointment Booking & Tracking</li>
+                <li>Billing & Insurance Processing</li>
+                <li>Laboratory & Diagnostic Integration</li>
+            </ul>
+        </div>
+        <a href="login.html" class="btn">Login</a>
+        <a href="signup.html" class="btn">Sign Up</a>
+    </div>
+<style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f0f8ff; }
+        header { background: #0078d7; color: #fff; padding: 20px; text-align: center; }
+        nav { background: #003366; color: #fff; padding: 10px 0; text-align: center; }
+        nav a { color: #fff; margin: 0 18px; text-decoration: none; font-weight: bold; font-size: 18px; }
+        nav a.active, nav a:hover { text-decoration: underline; }
+        .container { max-width: 800px; margin: 30px auto; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 8px #ccc; }
+        h2 { color: #0078d7; margin-top: 0; }
+        label { display: block; margin-top: 12px; }
+        input, select { width: 100%; padding: 7px; margin-top: 5px; border-radius: 4px; border: 1px solid #ccc; }
+        button { margin-top: 18px; padding: 10px 22px; background: #0078d7; color: #fff; border: none; border-radius: 5px; font-size: 17px; cursor: pointer; }
+        button:hover { background: #005fa3; }
+        .list-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .list-table th, .list-table td { border: 1px solid #ddd; padding: 9px 6px; text-align: left; }
+        .list-table th { background: #e6f2ff; }
+        .hidden { display: none; }
+        @media (max-width: 600px) {
+            .container { padding: 10px; }
+            nav a { font-size: 15px; margin: 0 8px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hospital Management System</h1>
+    </header>
+    <nav>
+        <a href="#home" class="active" onclick="showTab('home')">Home</a>
+        <a href="#patients" onclick="showTab('patients')">Patients</a>
+        <a href="#appointments" onclick="showTab('appointments')">Appointments</a>
+        <a href="#contact" onclick="showTab('contact')">Contact</a>
+    </nav>
+    <div class="container">
+        <!-- Home Tab -->
+        <section id="homeTab">
+            <h2>Welcome</h2>
+            <p>
+                This is a simple Hospital Management System. Register patients, book appointments, and view records all in one place.
+            </p>
+            <ul>
+                <li>Easy patient registration</li>
+                <li>Appointment scheduling</li>
+                <li>View patient and appointment lists</li>
+                <li>Contact and support section</li>
+            </ul>
+        </section>
+        <!-- Patients Tab -->
+        <section id="patientsTab" class="hidden">
+            <h2>Patient Registration</h2>
+            <form id="patientForm">
+                <label for="pname">Patient Name:</label>
+                <input type="text" id="pname" name="pname" required>
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required min="0">
+                <label for="disease">Disease/Condition:</label>
+                <input type="text" id="disease" name="disease" required>
+                <button type="submit">Register Patient</button>
+            </form>
+            <h3 style="margin-top:30px;">Patient List</h3>
+            <table class="list-table" id="patientList">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Age</th>
+                        <th>Disease/Condition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+        <!-- Appointments Tab -->
+        <section id="appointmentsTab" class="hidden">
+            <h2>Book Appointment</h2>
+            <form id="appointmentForm">
+                <label for="patient">Patient Name:</label>
+                <select id="patient" name="patient" required>
+                    <option value="">Select</option>
+                </select>
+                <label for="doctor">Doctor:</label>
+                <input type="text" id="doctor" name="doctor" required>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+                <button type="submit">Book Appointment</button>
+            </form>
+            <h3 style="margin-top:30px;">Appointment List</h3>
+            <table class="list-table" id="appointmentList">
+                <thead>
+                    <tr>
+                        <th>Patient</th>
+                        <th>Doctor</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+        <!-- Contact Tab -->
+        <section id="contactTab" class="hidden">
+            <h2>Contact</h2>
+            <p>Email: hospital@mail.com</p>
+            <p>Phone: +91 354672998</p>
+            <p>Address: 456 Health St, City, Country</p>
+        </section>
+    </div>
+    <script>
+        // Tab navigation
+        function showTab(tab) {
+            document.getElementById('homeTab').classList.add('hidden');
+            document.getElementById('patientsTab').classList.add('hidden');
+            document.getElementById('appointmentsTab').classList.add('hidden');
+            document.getElementById('contactTab').classList.add('hidden');
+            document.getElementById(tab + 'Tab').classList.remove('hidden');
+            document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+            document.querySelector('nav a[href="#' + tab + '"]').classList.add('active');
+        }
+
+        // Data storage (in-memory for demo)
+        const patients = [];
+        const appointments = [];
+
+        // Patient registration
+        document.getElementById("patientForm").addEventListener("submit", function(e){
+            e.preventDefault();
+            const name = document.getElementById("pname").value.trim();
+            const gender = document.getElementById("gender").value;
+            const age = document.getElementById("age").value;
+            const disease = document.getElementById("disease").value.trim();
+
+            if(!name || !gender || !age || !disease) {
+                alert("Please fill all fields.");
+                return;
+            }
+
+            patients.push({ name, gender, age, disease });
+            renderPatients();
+            updatePatientDropdown();
+            alert("Patient '" + name + "' registered successfully!");
+            this.reset();
+        });
+
+        // Render patient list
+        function renderPatients() {
+            const tbody = document.getElementById("patientList").querySelector("tbody");
+            tbody.innerHTML = "";
+            patients.forEach(p => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `<td>${p.name}</td><td>${p.gender}</td><td>${p.age}</td><td>${p.disease}</td>`;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Update patient dropdown for appointments
+        function updatePatientDropdown() {
+            const sel = document.getElementById("patient");
+            sel.innerHTML = '<option value="">Select</option>';
+            patients.forEach(p => {
+                const opt = document.createElement("option");
+                opt.value = p.name;
+                opt.textContent = p.name;
+                sel.appendChild(opt);
+            });
+        }
+
+        // Appointment booking
+        document.getElementById("appointmentForm").addEventListener("submit", function(e){
+            e.preventDefault();
+            const patient = document.getElementById("patient").value;
+            const doctor = document.getElementById("doctor").value.trim();
+            const date = document.getElementById("date").value;
+            const time = document.getElementById("time").value;
+
+            if(!patient || !doctor || !date || !time) {
+                alert("Please fill all fields.");
+                return;
+            }
+
+            appointments.push({ patient, doctor, date, time });
+            renderAppointments();
+            alert("Appointment booked for '" + patient + "' with Dr. " + doctor + "!");
+            this.reset();
+        });
+
+        // Render appointment list
+        function renderAppointments() {
+            const tbody = document.getElementById("appointmentList").querySelector("tbody");
+            tbody.innerHTML = "";
+            appointments.forEach(a => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `<td>${a.patient}</td><td>${a.doctor}</td><td>${a.date}</td><td>${a.time}</td>`;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Initial tab
+        showTab('home');
+    </script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 32px; }
+        table { border-collapse: collapse; width: 60%; margin-bottom: 32px; }
+        th, td { border: 1px solid #aaaaaa; padding: 8px 12px; text-align: left; }
+        th { background-color: #08496a; }
+        h2 { margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <h1>APPOINTMENT</h1>
+    
+    <h2>Patients</h2>
+    <table>
+        <tr>
+            <th>ID</th><th>Name</th><th>Age</th><th>Gender</th>
+        </tr>
+        <tr><td>1</td><td>John Doe</td><td>30</td><td>Male</td></tr>
+        <tr><td>2</td><td>Jane Smith</td><td>28</td><td>Female</td></tr>
+    </table>
+    
+    <h2>Doctors</h2>
+    <table>
+        <tr>
+            <th>ID</th><th>Name</th><th>Specialty</th>
+        </tr>
+        <tr><td>1</td><td>Dr. Alice</td><td>Cardiology</td></tr>
+        <tr><td>2</td><td>Dr. Bob</td><td>Neurology</td></tr>
+    </table>
+    
+    <h2>Appointments</h2>
+    <table>
+        <tr>
+            <th>ID</th><th>Patient</th><th>Doctor</th><th>Date</th><th>Time</th>
+        </tr>
+        <tr><td>1</td><td>John Doe</td><td>Dr. Alice</td><td>2025-10-07</td><td>10:00AM</td></tr>
+        <tr><td>2</td><td>Jane Smith</td><td>Dr. Bob</td><td>2025-10-08</td><td>11:00AM</td></tr>
+    </table>
+</body>
+</html>
